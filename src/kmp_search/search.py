@@ -83,7 +83,10 @@ class KMPSearch:
                 matches.append(text_index - pattern_index)
                 pattern_index = self.lps_table[pattern_index - 1]
 
-            elif text_index < len(text) and text[text_index] != self.pattern[pattern_index]:
+            elif (
+                text_index < len(text)
+                and text[text_index] != self.pattern[pattern_index]
+            ):
                 # try a shorter prefix if prefix length is not zero
                 if pattern_index != 0:
                     pattern_index = self.lps_table[pattern_index - 1]

@@ -1,5 +1,3 @@
-import pytest
-
 from src.kmp_search.search import KMPSearch
 
 
@@ -23,3 +21,5 @@ def test_kmp_search() -> None:
     assert [3] == KMPSearch("catdogcatxxx").search(text)
     assert [0] == KMPSearch("aaa").search(text)
     assert [] == KMPSearch("squirrel").search(text)
+    text = "aaacatdogcabbbcatdogcataaa"
+    assert [14] == KMPSearch("catdogcat").search(text)
